@@ -11,22 +11,43 @@ Testing-=Km!utt -> ttumKgn-=it!seT */
 
 #include <stdio.h>
 
+int	ft_isalpha(int c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return 1;
+	return 0;
+}
 void	reverse(char *n1,char *n2,int num)
 {
-	char	t1=*n1;
-	char	t2=*n2;
 	int	i=0;
-	if((t1[i] >= '65' && t1[i] <= 90) || (t1[i] >= '97' && t1[i] <= '122')
+	char	temp;
+	if(num%2 != 0)
+		num++;
+	while (i < num/2)
+	{
+		if(ft_isalpha(*n1) + ft_isalpha(*n2) == 2)
+		{
+			temp = *n1;
+			*n1 = *n2;
+			*n2 = temp;
+			n1++;
+			n2--;
+		}
+		else if(ft_isalpha(*n1) == 0)
+			n1++;
+		else
+			n2--;
+		i++;
+	}
 }
 int	main()
 {
-	char	array[100];
-	int	lenght=0;
+	char	str[100];
 	int	i=-1;
-	scanf("%s",array);
+	scanf("%s",str);
 
-	while(array[++i])
-		lenght++;
-	
+	while(str[++i])
+	reverse(str,str+i-1,i);
+	printf("%s",str);
 	return 0;
 }
