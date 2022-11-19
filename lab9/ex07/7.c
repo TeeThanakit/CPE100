@@ -5,10 +5,35 @@
 
 void	intersec(int *n1,int *n2)
 {
-	int	t1=*n1;
-	int	t2=*n2;
-	if(t1==t2)
-		printf("%d\n",t1);
+	char	*t1;
+	int	temp;
+	t1=(char *)n1;
+	int	x=0;
+	int	arr[50];
+
+	char	*t2;
+	t2=(char *)n2;
+
+	int	sum=0;
+	if(*t1==*t2)
+	{
+		//printf("%s\n",t1);
+		int	i=0;
+		int	count=0;
+		while(arr[i] != '\0')
+		{
+			if(temp == arr[i])
+			{
+				count++;
+			}
+			i++;
+		}
+		if(count==0)
+			arr[x]=temp;
+		x++;
+	}
+	for(int	i=0;i<x;i++)
+		printf("%d\n",arr[i]);
 }
 int	main()
 {

@@ -21,6 +21,8 @@ void	reverse(char *n1,char *n2,int num)
 {
 	int	i=0;
 	char	temp;
+	/*int	count=0;
+	int	count1=0;*/
 	if(num%2 != 0)
 		num++;
 	while (i < num/2)
@@ -32,21 +34,33 @@ void	reverse(char *n1,char *n2,int num)
 			*n2 = temp;
 			n1++;
 			n2--;
+			/*count=0;
+			count1=0;*/
 		}
 		else if(ft_isalpha(*n1) == 0)
+		{	
+			//count1++;
 			n1++;
+		}
 		else
+		{
 			n2--;
+			//count++;
+		}
+		/*if(count==2 || count1==2)
+			i--;*/
 		i++;
 	}
 }
 int	main()
 {
 	char	str[100];
+	int	x;
 	int	i=-1;
 	scanf("%s",str);
 
 	while(str[++i])
+		x = i;
 	reverse(str,str+i-1,i);
 	printf("%s",str);
 	return 0;
